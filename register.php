@@ -32,8 +32,12 @@
       
       <div class="row">
         <div class="col-md-4 col-md-offset-4 login-box">
-          <h3 class="text-center">Login To Continue</h3>
-          <form action="/action_page.php">
+          <h3 class="text-center">Register to Continue</h3>
+          <form action="">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="name" class="form-control" id="name">
+            </div>
             <div class="form-group">
               <label for="email">Email:</label>
               <input type="email" class="form-control" id="email">
@@ -42,12 +46,9 @@
               <label for="pwd">Password:</label>
               <input type="password" class="form-control" id="pwd">
             </div>
-            <div class="checkbox">
-              <label><input type="checkbox"> Remember me</label>
-            </div>
-            <button type="submit" class="btn btn-primary"> <i class="fa fa-sign-in"></i> login</button>
+            <button type="submit" class="btn btn-primary"> <i class="fa fa-sign-in"></i> Submit</button>
             <p>
-              Do not have an account? <a href="register.php">Register Here !</a>
+              Already have an account? <a href="login.php">Login Here !</a>
             </p>
           </form>
         </div>

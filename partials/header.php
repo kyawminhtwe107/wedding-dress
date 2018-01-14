@@ -3,8 +3,8 @@
     <div class="container">
       <h2 class="pull-left">Dawi Fashion</h2>
       <ul class="pull-right">
-        <a href="login.php" class="btn btn-xs btn-info"><li><span class="fa fa-sign-in"></span> Sign In</li></a>
-        <a href="register.php" class="btn btn-xs btn-info"><li><span class="fa fa-sign-out"></span> Sign Up</li></a>
+        <a href="login.php" class="btn btn-xs "><li><span class="fa fa-sign-in"></span> Sign In</li></a>
+        <a href="register.php" class="btn btn-xs"><li><span class="fa fa-sign-out"></span> Sign Up</li></a>
       </ul>
     </div>
   </div>
