@@ -47,9 +47,15 @@
 					$_SESSION['user_id'] = $user['id'];
 					$_SESSION['email'] = '';
 					$_SESSION['user_name'] = $user['name'];
-
-						header('location: index.php');
-						exit();
+						
+						if($user['role'] == 'user')
+						{
+							header('location: index.php');
+							exit();
+						}
+						else{
+							header('location: faq.php');
+						}
 				}
 				else
 				{

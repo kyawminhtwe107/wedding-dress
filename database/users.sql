@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2018 at 09:08 AM
+-- Generation Time: Jan 14, 2018 at 10:15 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dress_project`
+-- Table structure for table `users`
 --
 
-CREATE TABLE `dress_project` (
+CREATE TABLE `users` (
   `id` mediumint(9) NOT NULL,
   `name` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
@@ -34,23 +34,24 @@ CREATE TABLE `dress_project` (
   `role` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `updated_at` varchar(500) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `dress_project`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `dress_project` (`id`, `name`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES
-(1, 'firstuser', 'firstuser@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '', '', '');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES
+(1, 'firstuser', 'firstuser@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'user', '', ''),
+(2, 'seconduser', 'seconduser@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '', '', '');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `dress_project`
+-- Indexes for table `users`
 --
-ALTER TABLE `dress_project`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -58,10 +59,10 @@ ALTER TABLE `dress_project`
 --
 
 --
--- AUTO_INCREMENT for table `dress_project`
+-- AUTO_INCREMENT for table `users`
 --
-ALTER TABLE `dress_project`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `users`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -24,7 +24,7 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse" style="padding-left: 0px;">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
+              <li class="active"><a href="index.php">Home</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -37,7 +37,7 @@
               <li><a href="#">About Us</a></li>
               <li><a href="#">Contact Us</a></li>
               <li><a href="../navbar-static-top/">Help</a></li>
-              <li><a href="../navbar-fixed-top/">FAQ</a></li>
+              <li><a href="faq.php">FAQ</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
