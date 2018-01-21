@@ -1,3 +1,23 @@
+<?php
+  include('include/member.php');
+  if(@$_POST['submit'])
+  {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $pass = $_POST['pass'];
+    $cpass = $_POST['cpass'];
+
+    $info =array(
+      'name' => $name,
+      'email' => $email,
+      'pass' => $pass,
+      'cpass' => $cpass,
+    );
+    $member = new member($dbcon);
+
+    $member->register($info);
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,26 +51,32 @@
     <div class="container">
       
       <div class="row">
-        <div class="col-md-4 col-md-offset-4 login-box">
-          <h3 class="text-center">Register to Continue</h3>
-          <form action="">
-            <div class="form-group">
-              <label for="name">Name:</label>
-              <input type="name" class="form-control" id="name">
-            </div>
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="email" class="form-control" id="email">
-            </div>
-            <div class="form-group">
-              <label for="pwd">Password:</label>
-              <input type="password" class="form-control" id="pwd">
-            </div>
-            <button type="submit" class="btn btn-primary"> <i class="fa fa-sign-in"></i> Submit</button>
-            <p>
-              Already have an account? <a href="login.php">Login Here !</a>
-            </p>
-          </form>
+        <div class="container">
+          <div class="col-md-4 col-md-offset-4 login-box">
+            <h3 class="text-center">Register to Continue</h3>
+              <form action="" method="POST">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="name" name="name" class="form-control" id="name">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" name="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Password:</label>
+                  <input type="password" name="pass" class="form-control" id="pwd">
+                </div>
+                <div class="form-group">
+                  <label for="pwd2">Confirm Password:</label>
+                  <input type="password" name="cpass" class="form-control" id="pwd2">
+                </div>
+                <input type="submit" name="submit" class="btn btn-primary" value="Save">
+                <p>
+                  Already have an account? <a href="login.php">Login Here !</a>
+                </p>
+              </form>
+          </div>
         </div>
       </div>
 

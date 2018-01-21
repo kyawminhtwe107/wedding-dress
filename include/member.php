@@ -65,5 +65,88 @@
 				}
 			}
 	// @@@@@@@@@@@ /Login @@@@@@@@@ \\
+
+
+	// @@@@@@@@@@@ Register @@@@@@@@@ \\
+			function register($member)
+			{
+				global $dbcon;
+
+				$name = $member['name'];
+				$email = $member['email'];
+				$pass = $member['pass'];
+				$cpass = $member['cpass'];
+
+				$_SESSION['name'] = $name;
+				$_SESSION['email'] = $email;
+
+				if($name == "" || $name == NULL)
+				{
+					$_SESSION['error'] = 'Name is require !!!';
+					header('location: register.php');
+					exit();
+				}
+
+				if($email == "" || $email == NULL)
+				{
+					$_SESSION['error'] = 'Email is require !!!';
+					header('location: register.php');
+					exit();
+				}
+
+				if($pass == "" || $pass == NULL && $cpass == "" || $cpass == NULL)
+				{
+					$_SESSION['error'] = 'Password is require !!!';
+					header('location: register.php');
+					exit();
+				}
+
+				if($pass != $cpass)
+				{
+					$_SESSION['error'] = 'Password Did not match';
+					header('location: register.php');
+					exit();
+				}
+				else
+				{
+					$pass = md5($pass);
+
+					$sele = "SELECT * FROM users WHERE email = '$email' ";
+
+					$quar = mysqli_query($dbcon, $sele);
+
+					$row =  mysqli_num_rows($quar);
+
+					if($row > 0)
+					{
+						$_SESSION['error'] = 'Your Email is Already Registed !';
+						header('location: register.php');
+						exit();
+					}
+					else
+					{
+						$add = "INSERT INTO users (id,name,email,password) VALUES ('','$name','$email','$pass') ";
+
+						$qu = mysqli_query($dbcon,$add);
+
+						if(!$qu)
+						{
+							$_SESSION['error'] = die(mysqli_error($qu));
+							header('location: register.php');
+						}
+						else
+						{
+							$_SESSION['success'] = 'Successfully Registed !';
+
+							if($_SESSION['user_id'])
+							{
+								$_SESSION['user_id'] = mysqli_insert_id($qu);
+							}
+							header('location: index.php');
+						}
+					}
+				}
+			}
+	// @@@@@@@@@@@ /Register @@@@@@@@@ \\
 		}
 ?>

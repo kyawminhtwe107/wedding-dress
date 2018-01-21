@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2018 at 10:15 AM
+-- Generation Time: Jan 21, 2018 at 02:24 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -42,7 +42,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES
 (1, 'firstuser', 'firstuser@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'user', '', ''),
-(2, 'seconduser', 'seconduser@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '', '', '');
+(2, 'seconduser', 'seconduser@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '', '', ''),
+(3, 'Tester', 'tester@gmail.com', 'f5d1278e8109edd94e1e4197e04873b9', '', '', ''),
+(4, 'Tester1', 'tester1@gmail.com', '72a3dcef165d9122a45decf13ae20631', '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +64,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

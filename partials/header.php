@@ -2,10 +2,24 @@
   <div class="row header">
     <div class="container">
       <h2 class="pull-left">Dawi Fashion</h2>
+      
+      <?php if(@$_SESSION['user_id']){ ?>
       <ul class="pull-right">
-        <a href="login.php" class="btn btn-xs "><li><span class="fa fa-sign-in"></span> Sign In</li></a>
-        <a href="register.php" class="btn btn-xs"><li><span class="fa fa-sign-out"></span> Sign Up</li></a>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle btn btn-md" data-toggle="dropdown">Profile <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Change Password</a></li>
+            <li><a href="logout.php">Logout</a></li>
+          </ul>
+        </li>
       </ul>
+      <?php }else{ ?>
+      <ul class="pull-right">
+        <a href="login.php" class="btn btn-md "><li><span class="fa fa-sign-in"></span> Sign In</li></a>
+        <a href="register.php" class="btn btn-md "><li><span class="fa fa-sign-out"></span> Sign Up</li></a>
+      </ul>
+      <?php } ?>
     </div>
   </div>
   <div class="container">
@@ -14,7 +28,7 @@
       <nav class="navbar" style="margin-bottom: 0px;">
         <div class="container-fluid">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="border: 1px solid white;">
+            <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="border: 1px solid white;" >
               <span class="sr-only" >Toggle navigation</span>
               <span class="icon-bar" style="background: white;"></span>
               <span class="icon-bar" style="background: white;"></span>
