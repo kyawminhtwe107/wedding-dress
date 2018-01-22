@@ -1,3 +1,11 @@
+<?php  
+  include('include/getmenu.php');
+
+  $menu = new getmenu;
+
+  $artcategories = $menu->getAllArticleCategory();
+
+?>
 <div class="container-fluid nav-bg">
   <div class="row header">
     <div class="container">
@@ -42,8 +50,14 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
+                  <li><a href="./article-list.php?id=all" style="color:black;">All</a></li>
+                  <?php  
+                    foreach($artcategories as $c):
+                  ?>
+                  <li><a href="./article-list.php?id=<?php print $c['id']; ?>" style="color:black;"><?php print $c['title']; ?></a></li>
+                  <?php
+                    endforeach;
+                  ?>
                 </ul>
               </li>
             </ul>
