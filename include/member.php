@@ -7,16 +7,16 @@
 
 		class member{
 
-			private $dbcon;
+			private $link;
 
-			function __constractor($dbcon)
+			function __constractor($link)
 			{
-				$this->dbcon = $dbcon;
+				$this->dbcon = $link;
 			}
 	// @@@@@@@@@@@ Login @@@@@@@@@ \\
 			public function login($email,$pass)
 			{
-				global $dbcon;
+				global $link;
 
 				$_SESSION['email'] =$email;
 
@@ -38,7 +38,7 @@
 				$pass = md5($pass);
 
 				$sq = "SELECT * FROM users WHERE email = '$email' AND password = '$pass' ";
-				$quer = mysqli_query($dbcon,$sq);
+				$quer = mysqli_query($link,$sq);
 
 				$user = mysqli_fetch_assoc($quer);
 
@@ -54,7 +54,7 @@
 							exit();
 						}
 						else{
-							header('location: faq.php');
+							header('location: admin');
 						}
 				}
 				else
@@ -70,7 +70,7 @@
 	// @@@@@@@@@@@ Register @@@@@@@@@ \\
 			function register($member)
 			{
-				global $dbcon;
+				global $link;
 
 				$name = $member['name'];
 				$email = $member['email'];
@@ -113,7 +113,7 @@
 
 					$sele = "SELECT * FROM users WHERE email = '$email' ";
 
-					$quar = mysqli_query($dbcon, $sele);
+					$quar = mysqli_query($link, $sele);
 
 					$row =  mysqli_num_rows($quar);
 
@@ -127,7 +127,7 @@
 					{
 						$add = "INSERT INTO users (id,name,email,password) VALUES ('','$name','$email','$pass') ";
 
-						$qu = mysqli_query($dbcon,$add);
+						$qu = mysqli_query($link,$add);
 
 						if(!$qu)
 						{

@@ -11,8 +11,8 @@
              <!-- Sub menu -->
              
             <ul>
-                <li><a href="articles/">Admin Users</a></li>
-                <li><a href="articles-categories/">Users</a></li>
+                <li><a href="../admin/articles/">Admin Users</a></li>
+                <li><a href="../admin/articles-categories/">Users</a></li>
             </ul>
         </li>
 
@@ -24,8 +24,8 @@
              <!-- Sub menu -->
 
             <ul>
-                <li><a href="../articles/">Articles</a></li>
-                <li><a href="../article-categories/">Categories</a></li>
+                <li><a href="../admin/articles/">Articles</a></li>
+                <li><a href="../admin/article-categories/">Categories</a></li>
             </ul>
         </li>
     </ul>
