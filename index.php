@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,7 +38,7 @@
           <li data-target="#carousel-example-generic" data-slide-to="2"></li>
           <li data-target="#carousel-example-generic" data-slide-to="3"></li>
       </ol>
-
+      
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
           <div class="item active">
@@ -55,7 +58,7 @@
               <img src="img/slide4.jpg" alt="">
           </div>
       </div>
-
+      <?php include('partials/status.php'); ?>
       <!-- Controls -->
       <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>

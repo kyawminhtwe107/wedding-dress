@@ -1,3 +1,16 @@
+<?php
+  require('include/member.php');
+
+    if(@$_POST['submit'])
+    {
+        $email = $_POST['email'];
+        $pass = $_POST['pass'];
+
+        $member = new member;
+
+        $member->login($email,$pass);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -33,19 +46,20 @@
       <div class="row">
         <div class="col-md-4 col-md-offset-4 login-box">
           <h3 class="text-center">Login To Continue</h3>
-          <form action="/action_page.php">
+          <?php include('partials/status.php'); ?>
+          <form action="" method="post">
             <div class="form-group">
               <label for="email">Email:</label>
-              <input type="email" class="form-control" id="email">
+              <input type="email" name="email" class="form-control" id="email">
             </div>
             <div class="form-group">
               <label for="pwd">Password:</label>
-              <input type="password" class="form-control" id="pwd">
+              <input type="password" name="pass" class="form-control" id="pwd">
             </div>
             <div class="checkbox">
               <label><input type="checkbox"> Remember me</label>
             </div>
-            <button type="submit" class="btn btn-primary"> <i class="fa fa-sign-in"></i> login</button>
+            <input type="submit" name="submit" class="btn btn-primary" value="Login">
             <p>
               Do not have an account? <a href="register.php">Register Here !</a>
             </p>
